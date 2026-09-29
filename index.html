@@ -3,123 +3,160 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cold Calling Assistant – Makléri SK</title>
+    <title>Lead Radar – Nastavenie tvojho filtra leadov</title>
+    <!-- Tailwind CSS cez CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg-color: #0f172a;
-            --card-bg: #1e293b;
-            --accent-color: #38bdf8;
-            --text-color: #f8fafc;
-            --text-secondary: #94a3b8;
-        }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 16px;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 420px;
-            background-color: var(--card-bg);
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .header {
-            text-align: center;
-            border-bottom: 1px solid #334155;
-            padding-bottom: 16px;
-        }
-
-        .header h1 {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 4px;
-        }
-
-        .header p {
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
-
-        .instructions {
-            background-color: #0f172a;
-            border-left: 4px solid var(--accent-color);
-            border-radius: 8px;
-            padding: 12px;
-            font-size: 0.85rem;
-            line-height: 1.4;
-        }
-
-        .instructions ul {
-            padding-left: 18px;
-            margin-top: 8px;
-        }
-
-        .widget-wrapper {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 120px;
-            padding: 12px;
-            background-color: #0f172a;
-            border-radius: 12px;
-        }
-
-        .footer {
-            text-align: center;
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-        }
+        body { font-family: 'Inter', sans-serif; }
     </style>
 </head>
-<body>
+<body class="bg-slate-900 text-slate-100 min-h-screen py-10 px-4 sm:px-6 lg:px-8">
 
-    <div class="container">
-        <div class="header">
-            <h1>Cold Call Assistant</h1>
-            <p>Slovenský realitný trh – Makléri</p>
+    <div class="max-w-3xl mx-auto space-y-8">
+        
+        <!-- Hlavička / Informácie o softvéri -->
+        <div class="text-center space-y-4">
+            <div class="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 text-blue-400 px-4 py-1.5 rounded-full text-sm font-medium">
+                📡 Lead Radar Pre Maklérov
+            </div>
+            <h1 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                Získavaj tie najlepšie súkromné inzeráty každý deň
+            </h1>
+            <p class="text-slate-400 text-base sm:text-lg max-w-2xl mx-auto">
+                Náš AI softvér nepretržite skenuje realitné portály na celom Slovensku. Sleduje poklesy cien, dĺžku inzerácie a pomocou algoritmov vyhodnocuje priame kontakty na majiteľov, na ktoré sa ti naozaj oplatí zavolať.
+            </p>
         </div>
 
-        <div class="instructions">
-            <strong>Pokyny pre hovor:</strong>
-            <ul>
-                <li>Uistite sa, že reproduktor a mikrofón sú aktívne.</li>
-                <li>Položte prvý telefón blízko druhého telefónu pre jasný prenos zvuku.</li>
-                <li>Kliknite na widget nižšie pre spustenie AI agenta.</li>
-            </ul>
+        <!-- Výhody Lead Radaru -->
+        <div class="grid sm:grid-cols-3 gap-4 text-left">
+            <div class="bg-slate-800/60 border border-slate-700/50 p-4 rounded-xl space-y-2">
+                <div class="text-2xl">🎯</div>
+                <h3 class="font-semibold text-white">AI Filtrovanie</h3>
+                <p class="text-xs text-slate-400">Dostaneš len relevantné leady s vysokou šancou na nabratie.</p>
+            </div>
+            <div class="bg-slate-800/60 border border-slate-700/50 p-4 rounded-xl space-y-2">
+                <div class="text-2xl">📉</div>
+                <h3 class="font-semibold text-white">Detekcia zliav</h3>
+                <p class="text-xs text-slate-400">Automaticky zachytí zníženie ceny alebo ležiaky na trhu.</p>
+            </div>
+            <div class="bg-slate-800/60 border border-slate-700/50 p-4 rounded-xl space-y-2">
+                <div class="text-2xl">📩</div>
+                <h3 class="font-semibold text-white">Ranný Prehľad</h3>
+                <p class="text-xs text-slate-400">Čerstvý zoznam inzerátov v tvojom e-maile každý deň.</p>
+            </div>
         </div>
 
-        <div class="widget-wrapper">
-            <!-- ElevenLabs ConvAI Widget -->
-            <elevenlabs-convai agent-id="agent_1201m03mgq9te129bwswjfkvg7yj"></elevenlabs-convai>
+        <!-- Formulár na zber dát -->
+        <div class="bg-slate-800 border border-slate-700/80 rounded-2xl p-6 sm:p-8 shadow-2xl">
+            <div class="mb-6">
+                <h2 class="text-2xl font-bold text-white">Nastav si svoj osobný filter</h2>
+                <p class="text-slate-400 text-sm mt-1">Vyplň údaje nižšie, aby sme vedeli, aké inzeráty ti máme posielať.</p>
+            </div>
+
+            <!-- SEM VLOŽÍŠ SVOJ ACCESS_KEY Z WEB3FORMS ALEBO FORMSPREE -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+                
+                <!-- Skrytý kľúč pre e-mailovú službu -->
+                <input type="hidden" name="access_key" value="TENTO_KLUC_NAHRAD_SVOJIM_KLUM">
+                <input type="hidden" name="subject" value="Nový záujemca – Lead Radar Filter">
+
+                <!-- Osobné údaje -->
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Meno a Priezvisko *</label>
+                        <input type="text" name="meno_priezvisko" required placeholder="napr. Peter Novák" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">E-mail na doručovanie *</label>
+                        <input type="email" name="email" required placeholder="peter.novak@realitka.sk" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Telefónne číslo *</label>
+                    <input type="tel" name="telefon" required placeholder="+421 9XX XXX XXX" 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+                </div>
+
+                <hr class="border-slate-700 my-6">
+
+                <!-- Špecifikácia nehnuteľností -->
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Typ nehnuteľnosti *</label>
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                        <label class="flex items-center space-x-2 bg-slate-900 p-3 rounded-lg border border-slate-700 cursor-pointer hover:border-slate-500">
+                            <input type="checkbox" name="typ_nehnutelnosti[]" value="Byty" class="rounded text-blue-500 focus:ring-0 bg-slate-800">
+                            <span class="text-sm text-slate-200">Byty</span>
+                        </label>
+                        <label class="flex items-center space-x-2 bg-slate-900 p-3 rounded-lg border border-slate-700 cursor-pointer hover:border-slate-500">
+                            <input type="checkbox" name="typ_nehnutelnosti[]" value="Domy" class="rounded text-blue-500 focus:ring-0 bg-slate-800">
+                            <span class="text-sm text-slate-200">Domy</span>
+                        </label>
+                        <label class="flex items-center space-x-2 bg-slate-900 p-3 rounded-lg border border-slate-700 cursor-pointer hover:border-slate-500">
+                            <input type="checkbox" name="typ_nehnutelnosti[]" value="Pozemky" class="rounded text-blue-500 focus:ring-0 bg-slate-800">
+                            <span class="text-sm text-slate-200">Pozemky</span>
+                        </label>
+                        <label class="flex items-center space-x-2 bg-slate-900 p-3 rounded-lg border border-slate-700 cursor-pointer hover:border-slate-500">
+                            <input type="checkbox" name="typ_nehnutelnosti[]" value="Iné" class="rounded text-blue-500 focus:ring-0 bg-slate-800">
+                            <span class="text-sm text-slate-200">Iné</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Lokalita / Mestská časť *</label>
+                        <input type="text" name="lokalita" required placeholder="napr. Bratislava - Petržalka, Ružinov" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Počet izieb</label>
+                        <input type="text" name="pocet_izieb" placeholder="napr. 2-izbové až 4-izbové (bez garzóniek)" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                </div>
+
+                <div class="grid sm:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Cena OD (€)</label>
+                        <input type="number" name="cena_od" placeholder="100000" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-300 mb-2">Cena DO (€)</label>
+                        <input type="number" name="cena_do" placeholder="250000" 
+                            class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition">
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Počet leadov denne (od 5 do 20) *</label>
+                    <input type="number" name="pocet_leadov_denne" min="5" max="20" value="10" required 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-blue-500 transition">
+                </div>
+
+                <div>
+                    <label class="block text-sm font-medium text-slate-300 mb-2">Špeciálna poznámka / Preferencie</label>
+                    <textarea name="poznamka" rows="3" placeholder="napr. Uprednostňujem urgentné predaje, zlacnené nehnuteľnosti alebo byty s balkónom..." 
+                        class="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-2.5 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition"></textarea>
+                </div>
+
+                <button type="submit" 
+                    class="w-full bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3.5 px-6 rounded-lg shadow-lg hover:shadow-blue-500/25 transition duration-200">
+                    🚀 Uložiť filter a spustiť doručovanie
+                </button>
+
+            </form>
         </div>
 
-        <div class="footer">
-            Interné rozhranie • Použitie iba pre vlastné účely
-        </div>
+        <p class="text-center text-xs text-slate-500">
+            © 2026 Lead Radar. Všetky práva vyhradené.
+        </p>
+
     </div>
-
-    <!-- ElevenLabs ConvAI Script -->
-    <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
 
 </body>
 </html>
